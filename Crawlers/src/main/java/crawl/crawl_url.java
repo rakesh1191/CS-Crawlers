@@ -11,6 +11,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.UUID;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -92,9 +93,14 @@ public class crawl_url implements Runnable {
 					}
 				if(file==null)
 				{
-					Random r=new Random();					/// giving files random name
-					int nu=r.nextInt(100)+1;
-					file = "file"+Integer.toString(nu);							
+					/// giving files random name(update: unique ID by using UUID class)
+					Random r=new Random();					
+					int nu=r.nextInt(100000)+1;
+					//file = "file"+Integer.toString(nu);
+					//uuid
+					UUID uuid = UUID.randomUUID();
+	                String randomUUIDString = uuid.toString();
+	                file=randomUUIDString;							
 				}
 				System.out.println(file);
 				//Download file
