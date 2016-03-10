@@ -53,7 +53,7 @@ import opennlp.tools.coref.sim.SimilarityModel;
     
 	public void run(String link)
 	{
-		
+		//
 		Document doc = null;
 		try {
 			doc = Jsoup.connect(link).timeout(10*1000).get();		    
