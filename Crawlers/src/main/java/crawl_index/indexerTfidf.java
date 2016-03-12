@@ -55,7 +55,7 @@ public class indexerTfidf {
 	            fieldType.setStoreTermVectors(true);
 	            fieldType.setTokenized(true);
 	            Field contentField = new Field(fieldName, getAllText(f), fieldType);
-	            //
+	            // added path to index for output 
 	            try {
 	            Field pathField = new StringField("path", f.toString(), Field.Store.YES);
 	  	      doc.add(pathField);
